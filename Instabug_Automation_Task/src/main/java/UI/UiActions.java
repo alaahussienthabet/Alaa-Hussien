@@ -133,6 +133,14 @@ public class UiActions {
             HandleExceptions.ElementNotInteractableExceptionHandling(e);
         }
     }
+    /**
+     * to make true or false assertion about specific value
+     * @return
+     */
+    public boolean assertTrue(By assertionValue) {
+        return UiActions.driver.findElement(assertionValue).isDisplayed();
+    }
+
 
 
 }

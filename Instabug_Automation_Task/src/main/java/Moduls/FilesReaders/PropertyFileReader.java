@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * how to read configuration data from properties file
+ * how to read configuration data from properties8888 file
  */
 public class PropertyFileReader {
 

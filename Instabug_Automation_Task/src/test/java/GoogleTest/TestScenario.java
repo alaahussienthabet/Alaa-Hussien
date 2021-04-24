@@ -40,7 +40,7 @@ public class TestScenario extends BaseClass {
                 new ByteArrayInputStream(((TakesScreenshot) UiActions.driver).getScreenshotAs(OutputType.BYTES)));
 
 
-        Assert.assertTrue(landingPage.assertTrue());
+        Assert.assertTrue(landingPage.assertTheSearchKeywordIsDisplayed());
     }
 
     /**

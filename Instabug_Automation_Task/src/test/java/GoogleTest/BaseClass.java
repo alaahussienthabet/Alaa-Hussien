@@ -16,13 +16,12 @@ import org.testng.annotations.*;
 import java.io.IOException;
 
 /**
- * base class that have all baseic info and actions across all tests
+ * base class that have all basic info and actions across all tests
  */
 public class BaseClass {
 
 
     @BeforeClass
-    @Parameters({"Browser"}) // To run test from suite
     /**
      * function that switch to possible browsers that can use in tests and navigate to URL
      * @optional to run tests by default value = (chrome)

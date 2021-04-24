@@ -35,8 +35,8 @@ public class LandingPage {
      * to make true or false assertion about specific value
      * @return
      */
-    public boolean assertTrue() {
-        return UiActions.driver.findElement(assertionValue).isDisplayed();
+    public boolean assertTheSearchKeywordIsDisplayed() {
+        return action.assertTrue(assertionValue);
     }
 
 
