@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class UiActions {
@@ -15,6 +16,7 @@ public class UiActions {
     public static WebDriverWait wait;
     private WebElement element;
     public static String attribute;
+    private List<WebElement> elements;
 
 
     /**
@@ -82,6 +84,35 @@ public class UiActions {
         return this;
 
     }
+    /**
+     * Find List of Elements
+     *
+     * @param path
+     * @return
+     */
+    public UiActions findListOfElements(By path) {
+        try {
+            elements = driver.findElements(path);
+        } catch (InvalidSelectorException e) {
+            HandleExceptions.InvalidSelectorExceptionHandling(e);
+        } catch (NoSuchElementException e) {
+            HandleExceptions.NoSuchElementExceptionHandling(e);
+        } catch (NullPointerException e) {
+            HandleExceptions.NullPointerExceptionHandling(e);
+        } catch (ElementNotVisibleException e) {
+            HandleExceptions.ElementNotVisibleExceptionHandling(e);
+        }
+        return this;
+    }
+    /**
+     * Get Size for list of elements have the same path
+     *
+     * @return elements size
+     */
+    public int getSizeOfElements()
+    {
+        return elements.size();
+    }
 
     /**
      * to send value in specific element
@@ -132,6 +163,13 @@ public class UiActions {
         } catch (ElementNotInteractableException e) {
             HandleExceptions.ElementNotInteractableExceptionHandling(e);
         }
+    }
+    /**
+     * Handle scroll Down action on the browser
+     */
+    public void scrollDownToBottom() {
+        JavascriptExecutor scroll = (JavascriptExecutor) driver;
+        scroll.executeScript("window.scrollTo(0,1800);");
     }
     /**
      * to make true or false assertion about specific value

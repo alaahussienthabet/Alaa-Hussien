@@ -21,7 +21,7 @@ import java.io.IOException;
 public class BaseClass {
 
 
-    @BeforeClass
+    @BeforeMethod
     /**
      * function that switch to possible browsers that can use in tests and navigate to URL
      * @optional to run tests by default value = (chrome)
@@ -74,17 +74,17 @@ public class BaseClass {
 
 
         }
-
-    }
-
-
-    @AfterClass(enabled = true)
-/**
- * to close the browser after test
- */
-    public void afterClass() {
-
         UiActions.driver.close();
     }
+
+
+//    @AfterMethod(enabled = true)
+///**
+// * to close the browser after test
+// */
+//    public void afterClass() {
+//
+//        UiActions.driver.close();
+//    }
 
 }
